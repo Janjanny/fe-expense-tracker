@@ -1,13 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-    --gray: #BEBEBE;
+    --gray: #2c2c2c;
     --light-gray: #E2E2E2;
-    --stroke-gray: #E2E2E2;
+    --stroke-gray: #d1d1d1;
     --white: #FCFCFC;
     --black: #151515;
     --light-black: #545454;
     --violet: #7E0CF5;
+    --dark-violet: #6a09d1;
+
 }
 
 * {
@@ -23,11 +25,150 @@ body {
 }
 
 .screen {
-    width: 300px;
+    width: 418px;
     height: 540px;
     background-color: var(--white);
     border-radius: 25px;
-    overflow: hidden;
-    padding: 30px 30px;
+    overflow: auto;
+    padding: 30px 40px;
+    position: relative;
+
     
+}
+.screen::-webkit-scrollbar {
+    display: none;
+}
+
+.screen .header h2 {
+    font-size: 18px;
+}
+
+.screen .bubble {
+    width: 100%;
+    height: 110px;
+    background-color: var(--black);
+    color: var(--white);
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    margin-top: 50px;
+    border-radius: 35px;
+    cursor: default;
+    box-shadow: 0px 10px 24px 0px rgba(0,0,0,0.1);
+}
+
+.bubble .budget {
+    font-size: 28px;
+}
+
+.bubble .budget span {
+    font-size: 18px;
+    margin-right: 12px;
+}
+
+.bubble .currency {
+    color: var(--light-black);
+    cursor: default;
+}
+
+.expense-section {
+    margin-top: 50px;
+}
+
+.expense-section .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.expense-section .header p {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.expense-section .header .budget-btn {
+    font-size: 12px;
+    cursor: pointer;
+    border: none;
+    color: var(--white);
+    background-color: var(--violet);
+    padding: 5px 9px;
+    border-radius: 12px;
+}
+
+
+.expense-section .header .budget-btn:hover {
+    background-color: var(--dark-violet);
+    transition: background-color .3s ease-in-out;
+}
+
+.expense-section .header .budget-btn:active {
+    transform: scale(.95);
+    transition: all .3s;
+}
+
+.expense-section .expense-card {
+    background-color: var(--light-gray);
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    padding: 15px 25px;
+    margin-top: 12px;
+    border-radius:16px;
+    cursor: pointer;
+    border: 1px solid transparent;
+
+}
+.expense-section .expense-card:hover {
+    border: 1px solid var(--stroke-gray);
+    transition: all .3s ease;
+}
+
+.expense-card .tip-color {
+    position: absolute;
+    width: 10px;
+    height: 100%;
+    background-color: var(--violet);
+    left: 0;
+}
+
+.expense-card .expense-detail .name {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.expense-card .expense-detail .description {
+    font-size: 12px;
+    color: var(--black);
+    font-style: italic;
+}
+
+.expense-amount .amount {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.screen .add-btn {
+    position: sticky;
+    right: 70px;
+    bottom: 10px;
+    margin-left: 90%;
+
+    font-size: 20px;
+    color: var(--white);
+    background-color: var(--black);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 7px 20px 0px rgba(0,0,0,0.1);
 }
