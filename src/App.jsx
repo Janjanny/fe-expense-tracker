@@ -5,6 +5,8 @@ import { IconContext } from "react-icons";
 import BudgetForm from './component/BudgetForm';
 import './App.css';
 import './styles/BudgetFormStyles.css'
+import { CSSTransition } from "react-transition-group";
+
 
 function App() {
 
@@ -81,7 +83,9 @@ function App() {
           +
         </button>
 
-        {modalBudget && <BudgetForm closeModalBudget={closeModalBudget} />}
+        <CSSTransition in={modalBudget} timeout={300} classNames={"modalB"} unmountOnExit>
+          <BudgetForm closeModalBudget={closeModalBudget} />
+        </CSSTransition>
 
 
         
