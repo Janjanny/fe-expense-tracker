@@ -1,13 +1,22 @@
 import { useState } from 'react'
 import { HiMenu } from "react-icons/hi";
 import { IconContext } from "react-icons";
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import BudgetForm from './component/BudgetForm';
 import './App.css';
 import './styles/BudgetFormStyles.css'
 
 function App() {
+
+  const[modalBudget, setModalBudget] = useState(false);
+
+  const openModalBudget = () => {
+    setModalBudget(true);
+  }
+
+  const closeModalBudget = () => {
+    setModalBudget(false);
+  }
 
   return (
     <>
@@ -30,7 +39,7 @@ function App() {
         <div className="expense-section">
           <div className="expense-header">
             <p>Expenses</p>
-            <button className="budget-btn">Add Budget</button>
+            <button className="budget-btn" onClick={openModalBudget}>Add Budget</button>
           </div>
 
           {/* expenses entry */}
@@ -72,7 +81,7 @@ function App() {
           +
         </button>
 
-        <BudgetForm/>
+        {modalBudget && <BudgetForm closeModalBudget={closeModalBudget} />}
 
 
         
