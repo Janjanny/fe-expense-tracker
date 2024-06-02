@@ -39,8 +39,21 @@ body {
     display: none;
 }
 
+.screen .header {
+    display: flex;
+    align-items: center;
+    height: 20px;
+}
+
+.screen .header .icon {
+    display: flex;
+    margin-right: .5rem;
+    cursor: pointer;
+}
+
 .screen .header h2 {
     font-size: 18px;
+    cursor: pointer;
 }
 
 .screen .bubble {
@@ -77,18 +90,18 @@ body {
     margin-top: 50px;
 }
 
-.expense-section .header {
+.expense-section .expense-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.expense-section .header p {
+.expense-section .expense-header p {
     font-size: 14px;
     font-weight: bold;
 }
 
-.expense-section .header .budget-btn {
+.expense-section .expense-header .budget-btn {
     font-size: 12px;
     cursor: pointer;
     border: none;
@@ -99,12 +112,12 @@ body {
 }
 
 
-.expense-section .header .budget-btn:hover {
+.expense-section .expense-header .budget-btn:hover {
     background-color: var(--dark-violet);
     transition: background-color .3s ease-in-out;
 }
 
-.expense-section .header .budget-btn:active {
+.expense-section .expense-header .budget-btn:active {
     transform: scale(.95);
     transition: all .3s;
 }

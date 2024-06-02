@@ -1,15 +1,23 @@
 import { useState } from 'react'
+import { HiMenu } from "react-icons/hi";
+import { IconContext } from "react-icons";
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
+import BudgetForm from './component/BudgetForm';
+import './App.css';
+import './styles/BudgetFormStyles.css'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
       <div className="screen">
         <div className="header">
+          <IconContext.Provider value={{ color: "black", className: "icon", size:'1.5rem' }}>
+            <div>
+              <HiMenu/>
+            </div>
+          </IconContext.Provider>
           <h2>Dashboard</h2>
         </div>
 
@@ -20,7 +28,7 @@ function App() {
         </div>
 
         <div className="expense-section">
-          <div className="header">
+          <div className="expense-header">
             <p>Expenses</p>
             <button className="budget-btn">Add Budget</button>
           </div>
@@ -63,6 +71,9 @@ function App() {
         <button className="add-btn">
           +
         </button>
+
+        <BudgetForm/>
+
 
         
       </div>
