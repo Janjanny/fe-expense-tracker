@@ -6,8 +6,9 @@ const BudgetForm = () => {
         <div className="budget-card">
             <h2>Add Budget</h2>
             <div className="currency">PHP</div>
-            <input type="text" />
-            <button>Submit</button>
+            <input type="number" className="input-amount" />
+            <button className="close-btn">Close</button>
+            <button className="submit-btn">Submit</button>
         </div>
       </>)
 }
