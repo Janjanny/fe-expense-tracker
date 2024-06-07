@@ -8,9 +8,11 @@ import './styles/BudgetFormStyles.css'
 import { CSSTransition } from "react-transition-group";
 
 
-function App() {
+function App() {  
+  let startingBudget = 500;
 
-  const[modalBudget, setModalBudget] = useState(false);
+  const [modalBudget, setModalBudget] = useState(false);
+  const [budget, setBudget] = useState(startingBudget);
 
   const openModalBudget = () => {
     setModalBudget(true);
@@ -22,7 +24,8 @@ function App() {
 
   return (
     <>
-      <div className="screen">
+      <div className={`screen ${modalBudget && 'scroll-lock'}`}>
+        {modalBudget && <CSSTransition in={modalBudget} timeout={300}><div className="black-overlay"></div></CSSTransition>}
         <div className="header">
           <IconContext.Provider value={{ color: "black", className: "icon", size:'1.5rem' }}>
             <div>
@@ -33,7 +36,7 @@ function App() {
         </div>
 
         <div className="bubble">
-          <p className="budget"><span>$</span>10,000</p>
+          <p className="budget"><span>$</span>{budget}</p>
 
           <p className="currency">PHP</p>
         </div>
@@ -41,7 +44,7 @@ function App() {
         <div className="expense-section">
           <div className="expense-header">
             <p>Expenses</p>
-            <button className="budget-btn" onClick={openModalBudget}>Add Budget</button>
+            <button className="budget-btn" onClick={openModalBudget}>Set Budget</button>
           </div>
 
           {/* expenses entry */}
@@ -84,7 +87,7 @@ function App() {
         </button>
 
         <CSSTransition in={modalBudget} timeout={300} classNames={"modalB"} unmountOnExit>
-          <BudgetForm closeModalBudget={closeModalBudget} />
+          <BudgetForm closeModalBudget={closeModalBudget} setBudget={setBudget} />
         </CSSTransition>
 
 
