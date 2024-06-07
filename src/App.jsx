@@ -7,9 +7,11 @@ import './App.css';
 import './styles/BudgetFormStyles.css'
 import { CSSTransition } from "react-transition-group";
 
+import expenses from './data';
+
 
 function App() {  
-  let startingBudget = 500;
+  let startingBudget = 100;
 
   const [modalBudget, setModalBudget] = useState(false);
   const [budget, setBudget] = useState(startingBudget);
@@ -21,6 +23,8 @@ function App() {
   const closeModalBudget = () => {
     setModalBudget(false);
   }
+
+  const [expenseWindow, openExpenseWindow] = useState(false);
 
   return (
     <>
