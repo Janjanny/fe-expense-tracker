@@ -190,21 +190,27 @@ body {
 .modalB-enter {
     opacity: 0;
     transform: scale(0.9);
+    transform: translateY(-50%);
 }
 
 .modalB-enter-active {
     opacity: 1;
-    transform: translateY(50%);
-    transition: opacity 300ms, transform 300ms;
+    transform: translateY(0);
+    transition: opacity 300ms;
 }
 
 .modalB-exit {
     opacity: 1;
+}
+
+.modalB-exit-active {
+    opacity: 0;
     transform: scale(0.9);
+    transition: opacity 300ms, transform 300ms;
 }
 
 
-.black-overlay {
+/* .black-overlay {
     position: absolute;
     width: 100%;
     height: 200%;
@@ -213,7 +219,7 @@ body {
     left: 0;
     z-index: 1;
     background-color: #1a1a1a8e;
-}
+} */
 
 .screen.scroll-lock {
     overflow: hidden;
